@@ -1,0 +1,276 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Noto Sans Telugu', sans-serif;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  background-color: #e8dcc5;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.app-container {
+  width: 100%;
+  max-width: 450px;
+  background-color: #fdf6e7;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  padding-bottom: 16px;
+}
+
+/* Header */
+.cal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px 6px;
+  background: linear-gradient(180deg, #f6e7c8 0%, #fdf6e7 100%);
+}
+
+.nav-btn {
+  background: none;
+  border: none;
+  font-size: 20px;
+  color: #3a2312;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+
+.title-box {
+  text-align: center;
+}
+
+.title-box h1 {
+  font-size: 22px;
+  font-weight: 800;
+  color: #2b180a;
+  line-height: 1.2;
+}
+
+.title-box p {
+  font-size: 11px;
+  font-weight: 600;
+  color: #6e4726;
+}
+
+/* Pure Image Wallpaper */
+.banner-card {
+  margin: 4px 10px 8px;
+  border: 2.5px solid #8b1e1e;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #fdf6e7;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.12);
+}
+
+.wallpaper-wrapper {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  background: linear-gradient(135deg, #d4a359 0%, #8c5220 100%);
+}
+
+.wallpaper-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Calendar Grid */
+.calendar-section {
+  padding: 0 8px;
+  flex: 1;
+}
+
+.weekdays-row {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 2px;
+  margin-bottom: 3px;
+}
+
+.day-name {
+  background-color: #1f242d;
+  color: #ffffff;
+  text-align: center;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 5px 0;
+  border-radius: 4px;
+}
+
+.day-name.sun {
+  background-color: #b71c1c;
+}
+
+.days-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 2px;
+  background-color: #d6c5a3;
+  border: 1.5px solid #bfa77a;
+}
+
+.date-cell {
+  background-color: #fffdf7;
+  min-height: 56px;
+  padding: 3px 2px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.date-cell:active {
+  background-color: #f3e4c3;
+}
+
+.date-cell.empty {
+  background-color: #f5ebd6;
+  cursor: default;
+}
+
+.date-cell.today {
+  background-color: #fff3cd;
+  outline: 2px solid #d97706;
+  z-index: 1;
+}
+
+.date-num {
+  font-size: 16px;
+  font-weight: 800;
+  color: #1a1a1a;
+  line-height: 1.1;
+  margin-bottom: 2px;
+}
+
+.date-cell.sunday .date-num {
+  color: #c62828;
+}
+
+.verse-short {
+  font-size: 7.5px;
+  font-weight: 600;
+  color: #333;
+  line-height: 1.15;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.verse-ref {
+  font-size: 7px;
+  font-weight: 700;
+  color: #7c3f00;
+  margin-top: 1px;
+}
+
+/* Modal Popup */
+.modal {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.65);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  padding: 20px;
+}
+
+.modal.hidden {
+  display: none;
+}
+
+.modal-content {
+  background: #fffdf7;
+  border: 2px solid #8b1e1e;
+  border-radius: 12px;
+  padding: 20px;
+  width: 100%;
+  max-width: 360px;
+  text-align: center;
+  position: relative;
+}
+
+.close-btn {
+  position: absolute;
+  top: 8px;
+  right: 14px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #666;
+  cursor: pointer;
+}
+
+.modal-date {
+  display: inline-block;
+  background: #8b1e1e;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 3px 12px;
+  border-radius: 12px;
+  margin-bottom: 14px;
+}
+
+.modal-verse {
+  font-size: 17px;
+  font-weight: 700;
+  color: #2b180a;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+
+.modal-ref {
+  font-size: 14px;
+  font-weight: 800;
+  color: #a61c1c;
+  margin-bottom: 16px;
+}
+
+.share-btn {
+  background: #1b5e20;
+  color: #fff;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  width: 100%;
+}
+
+/* Fix horizontal overflow on long Telugu words */
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+}
+.app-container {
+  overflow-x: hidden;
+}
+.weekdays-row, .days-grid {
+  grid-template-columns: repeat(7, minmax(0, 1fr)) !important;
+  width: 100%;
+}
+.date-cell {
+  min-width: 0;
+  overflow: hidden;
+  word-wrap: break-word;
+  overflow-wrap: anywhere;
+}
+.verse-short, .verse-ref {
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}

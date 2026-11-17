@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="te">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>ఆధ్యాత్మిక క్రైస్తవ క్యాలెండర్</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Telugu:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Top Header -->
+    <header class="cal-header">
+      <button id="prevBtn" class="nav-btn" aria-label="Previous Month">&#10094;</button>
+      <div class="title-box">
+        <h1 id="monthTitle">నవంబర్ 2026</h1>
+        <p id="subTitle">ఆధ్యాత్మిక క్రైస్తవ క్యాలెండర్</p>
+      </div>
+      <button id="nextBtn" class="nav-btn" aria-label="Next Month">&#10095;</button>
+    </header>
+
+    <!-- Pure Image Wallpaper Banner -->
+    <section class="banner-card">
+      <div class="wallpaper-wrapper">
+        <img id="wallpaperImg" src="assets/nov_2026.jpg" alt="Monthly Christian Wallpaper" onerror="this.style.display='none'">
+      </div>
+    </section>
+
+    <!-- Calendar Section -->
+    <main class="calendar-section">
+      <div class="weekdays-row">
+        <div class="day-name sun">ఆది</div>
+        <div class="day-name">సోమ</div>
+        <div class="day-name">మంగళ</div>
+        <div class="day-name">బుధ</div>
+        <div class="day-name">గురు</div>
+        <div class="day-name">శుక్ర</div>
+        <div class="day-name">శని</div>
+      </div>
+      <div id="calendarGrid" class="days-grid"></div>
+    </main>
+  </div>
+
+  <!-- Verse Popup Modal -->
+  <div id="verseModal" class="modal hidden">
+    <div class="modal-content">
+      <span id="closeModal" class="close-btn">&times;</span>
+      <div id="modalDateBadge" class="modal-date">నవంబర్ 1, 2026</div>
+      <p id="modalFullVerse" class="modal-verse">యెహోవా నా కాపరి; నాకు లేమి కలుగదు.</p>
+      <p id="modalRef" class="modal-ref">కీర్తన 23:1</p>
+      <button id="shareVerseBtn" class="share-btn">వాక్యాన్ని షేర్ చేయండి (Share)</button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
